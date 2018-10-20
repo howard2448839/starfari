@@ -10,80 +10,10 @@
         <!-- <meta property="og:description" content="Hello, Universe!"> -->
         <!-- <link rel="icon" type="image/png" href="favicon.ico"> -->
       
-        <style>
-            @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-            body {
-                /* background-image: url("img/telescope.jpg"); */
-                background-color: black;
-                background-repeat: no-repeat;
-                background-size: cover;
-                margin: 0;
-                padding: 0;
-                font-family: 'Noto Sans TC';
-                overflow: hidden;
-            }
-            .header {
-                z-index: 1;
-                width: 100%;
-                height: 40px;
-                position: absolute;
-                top: 0;
-                background: blanchedalmond;
-                /* background: rgba(0, 0, 0, 0.7); */
-                color: black;
-                text-align: center;
-                line-height: 40px;
-                padding: 10 10 5 10;
-                vertical-align: middle;
-                font-size: 20px;
-            }
-            .container {
-                position: absolute;
-                margin: auto;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-                height: 100%;
-                flex-flow: column;
-            }
-            .description {
-              height: 50px;
-              color: white;
-              margin-bottom: 30px;
-            }
-            .themes {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
-            .theme {
-              width: 300px;
-              height: 300px;
-              background: wheat;
-              border-radius: 5px;
-              margin: 0 30px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              flex-flow: column;
-              cursor: pointer;
-            }
-            .theme-disabled {
-              background: gray;
-              cursor: not-allowed;
-            }
-            .theme:hover {
-              background: yellowgreen;
-            }
-            .theme-disabled:hover {
-              background: gray;
-            }
-        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css" />
+        <link rel="stylesheet" href="css/menu.css" />
     </head>
+    
     <body>
         <div class="header">
           STARFARI
@@ -107,28 +37,8 @@
                 </div>
             </div>
         </div>
-        <script src="js/theme.js?20181020a"></script>
-        <script>
-          for (let i = 0; i < 3; i++) {
-            let themeKey = (i+1).toString()
-            let theme = document.getElementById("theme"+themeKey);
-            let images = imageSets[themeKey]
-            let index = localStorage.getItem(`theme${themeKey}`)
-            if (index === null) {
-              index = -1
-            } else {
-              index = parseInt(index)
-            }
-            let progress = null
-            if (index === -1) {
-              progress = 0
-            } else {
-              progress = index
-            }
-            console.log(`theme ${themeKey}`)
-            console.log(`progress ${progress}`)
-            theme.getElementsByClassName("progress")[0].innerHTML = `${progress}/${images.length}`
-          }
-        </script>
+        
+        <script src="js/theme.js"></script>
+        <script src="js/menu.js"></script>
     </body>
 </html>
